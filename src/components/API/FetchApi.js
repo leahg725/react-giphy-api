@@ -11,7 +11,6 @@ const FetchApi = () => {
       .then((response) => response.json())
       .then((response) => {
         setData(response.data);
-        
       });
   };
 
@@ -20,7 +19,6 @@ const FetchApi = () => {
   }, []);
   return (
     <div>
-      {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
       <div className="Gifs-wrapper">
           {data.map(item => {
             return <Gif url={item.url} alt={item.title} key={item.id} src={item.images.fixed_height.url}/>
